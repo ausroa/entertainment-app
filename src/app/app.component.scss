@@ -4,10 +4,34 @@
     position: relative;
     min-height: 50px;
     border: none;
+    background-color: #494949;
 
     @media (min-width: 768px) {
       border-radius: 0;
     }
+
+    a {
+      img {
+        width: 10%;
+      }
+    }
+  }
+
+  .logo-text {
+    position: absolute;
+    top: 30px;
+    font-size: 35px;
+    left: 70px;
+    font-weight: bold;
+    color: #dddddd;
+  }
+
+  ul.nav.nav-pills {
+    padding-top: 15px;
+  }
+
+  .navbar.navbar-inverse {
+    height: 80px;
   }
 
   .navbar-header {
@@ -17,7 +41,7 @@
     padding-left: 0;
 
     .navbar-brand {
-      padding: 25px 43% 0 43%;
+      font-weight: bold;
     }
   }
 
