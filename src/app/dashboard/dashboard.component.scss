@@ -1,0 +1,27 @@
+.dashboard-view {
+  ul {
+    background-color: #222222;
+    padding: 20px 0 0 0;
+
+    a{
+      color: #dddddd;
+      font-weight: bold;
+
+      &:hover {
+        border-bottom: none;
+        color: #222222
+      }
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: none;
+  }
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  color: #222222;
+  cursor: default;
+}

@@ -1,0 +1,47 @@
+.entertain-header {
+  nav {
+    margin-bottom: 0;
+    position: relative;
+    min-height: 50px;
+    border: none;
+
+    @media (min-width: 768px) {
+      border-radius: 0;
+    }
+  }
+
+  .navbar-header {
+    display: inline-block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+
+    .navbar-brand {
+      padding: 25px 43% 0 43%;
+    }
+  }
+
+  .right-links {
+    float: right;
+  }
+
+  .nav-pills {
+    background-color: #222222;
+  }
+  .nav-pills>li.active>a,
+  .nav-pills>li.active>a:focus,
+  .nav-pills>li.active>a:hover {
+    color: #dddddd;
+    background-color: #494949;
+  }
+  .nav-pills>li>a {
+    color: #ffffff;
+    &:hover {
+      color: #222222;
+    }
+  }
+
+  ul {
+    background-color: transparent;
+  }
+}
