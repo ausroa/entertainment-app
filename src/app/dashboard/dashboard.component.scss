@@ -4,12 +4,16 @@
     padding: 20px 0 0 0;
 
     a {
-      color: #dddddd;
+      color: white;
       font-weight: bold;
+      &:hover {
+        background-color: white;
+        color: #222222 !important;
+      }
 
       &:hover {
         border-bottom: none;
-        color: #222222
+        color: #dddddd
       }
     }
   }
@@ -22,6 +26,8 @@
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
+  border-bottom: none;
+  background-color: white;
   color: #222222;
   cursor: default;
 }

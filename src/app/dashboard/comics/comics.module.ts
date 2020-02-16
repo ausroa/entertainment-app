@@ -4,6 +4,7 @@ import { ComicsHomeComponent } from './comics-home/comics-home.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { ComicsComponent } from './comics.component';
 import { ComicsRoutingModule } from './comics-routing.module';
+import { HeroSearchComponent } from './heroes/modal/hero-search/hero-search.component';
 
 /**
  * Comics Module
@@ -15,7 +16,8 @@ import { ComicsRoutingModule } from './comics-routing.module';
   declarations: [
     ComicsComponent,
     ComicsHomeComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroSearchComponent
   ],
   imports: [
     ComicsRoutingModule

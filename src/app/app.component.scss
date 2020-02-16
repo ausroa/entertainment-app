@@ -19,7 +19,6 @@
 
   .logo-text {
     position: absolute;
-    top: 30px;
     font-size: 35px;
     left: 70px;
     font-weight: bold;
@@ -58,10 +57,12 @@
     color: #dddddd;
     background-color: #494949;
   }
+
   .nav-pills>li>a {
     color: #ffffff;
     &:hover {
-      color: #222222;
+      background-color: #494949;
+      color: #dddddd;
     }
   }
 

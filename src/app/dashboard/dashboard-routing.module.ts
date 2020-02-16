@@ -14,6 +14,12 @@ const routes: Routes = [
     children: [
       {
         path: 'comics', loadChildren: () => import('./comics/comics.module').then(m => m.ComicsModule)
+      },
+      {
+        path: 'games', loadChildren: () => import('./games/games.module').then(m => m.GamesModule)
+      },
+      {
+        path: 'music', loadChildren: () => import('./music/music.module').then(m => m.MusicModule)
       }
     ]
   }

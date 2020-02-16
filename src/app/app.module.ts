@@ -1,9 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+/**
+ * Main application module
+ *
+ * @author: Austin Roa
+ * @since: 1.0
+ */
 @NgModule({
   declarations: [
     AppComponent,
