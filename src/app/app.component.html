@@ -4,22 +4,33 @@
       <img alt="Logo" src="assets/images/banner.png">
       <span class="logo-text">Cradle</span>
     </a>
+    <ul class="nav nav-pills">
+<!--      TODO activate sign up if user is not registered-->
+      <li *ngIf="false"
+          role="presentation"
+          routerLinkActive="active"
+          class="right-links">
+        <a routerLink="register">Sign Up</a>
+      </li>
+      <li role="presentation"
+          routerLinkActive="active"
+          class="right-links">
+        <a routerLink="help">Help</a>
+      </li>
+      <li role="presentation"
+          routerLinkActive="active" class="right-links">
+        <a routerLink="about">About</a>
+      </li>
+    </ul>
   </nav>
   <ul class="nav nav-pills">
-    <li role="presentation" routerLinkActive="active">
+    <li role="presentation"
+        routerLinkActive="active">
       <a routerLink="dashboard">Dashboard</a>
     </li>
-    <li role="presentation" routerLinkActive="active">
+    <li role="presentation"
+        routerLinkActive="active">
       <a routerLink="community">Community</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="register">Sign Up</a>
-    </li>
-    <li role="presentation" routerLinkActive="active" class="right-links">
-      <a routerLink="help">Help</a>
-    </li>
-    <li role="presentation" routerLinkActive="active" class="right-links">
-      <a routerLink="about">About</a>
     </li>
   </ul>
 </div>
