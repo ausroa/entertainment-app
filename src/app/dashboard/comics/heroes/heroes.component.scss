@@ -2,4 +2,15 @@ button {
   padding: 10px;
   font-size: 25px;
   border: none;
+  width: 25%;
+}
+
+.flex-view-column {
+  justify-content: center;
+
+  img {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 10px;
+  }
 }
