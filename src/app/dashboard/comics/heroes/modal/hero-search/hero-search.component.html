@@ -1,9 +1,26 @@
 <app-modal-template title="Hero Search">
-  <div class="flex-view">
-    <input type="text">
-    <button class="btn btn-primary">Search</button>
+  <div class="flex-view-row" [formGroup]="heroSearchForm">
+    <label for="heroSearch"></label>
+    <input id="heroSearch"
+           type="text"
+           formControlName="heroSearchName">
+    <button class="btn btn-primary" (click)="searchHero()">Search</button>
   </div>
-  <div class="flex-view">
-    <app-hero-details></app-hero-details>
+  <div class="hero-details">
+    <div class="flex-view-row">
+      <div class="hero-card">
+        <div class="flex-view-column">
+          <img src="assets/images/heroes-banner.jpg" alt="heroes">
+          <div class="hero-text grid-column-2"
+               *ngFor="let hero of searchResult">
+            <div class="flex-view-column">
+              <span>Name: {{hero.name}}</span>
+              <span>Powers: {{hero.powerstats.strength}}</span>
+            </div>
+            <span>Statistics: {{hero.biography['full-name']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </app-modal-template>
