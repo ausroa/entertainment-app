@@ -29,6 +29,10 @@
     padding-top: 15px;
   }
 
+  .nav-link {
+    border-radius: 0;
+  }
+
   .navbar.navbar-inverse {
     height: 80px;
   }
@@ -60,13 +64,10 @@
 
   .nav-pills>li>a {
     color: #ffffff;
+
     &:hover {
       background-color: #494949;
       color: #dddddd;
     }
-  }
-
-  ul {
-    background-color: transparent;
   }
 }

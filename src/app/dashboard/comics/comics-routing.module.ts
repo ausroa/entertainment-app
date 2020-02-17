@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ComicsComponent } from './comics.component';
 import { ComicsHomeComponent } from './comics-home/comics-home.component';
 import {HeroesComponent} from './heroes/heroes.component';
+import {HeroSearchComponent} from './heroes/modal/hero-search/hero-search.component';
 
 /**
  * Comics Routing Module

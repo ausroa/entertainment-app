@@ -1,23 +1,31 @@
-<div class="dashboard-view">
-  <ul class="nav nav-tabs" >
-    <li role="presentation"
-        routerLinkActive="active"
-        class="nav-item">
-      <a routerLink="comics"
-         class="nav-link">Comics</a>
-    </li>
-    <li role="presentation"
-        routerLinkActive="active"
-        class="nav-item">
-      <a routerLink="games"
-         class="nav-link">Games</a>
-    </li>
-    <li role="presentation"
-        routerLinkActive="active"
-        class="nav-item">
-      <a routerLink="music"
-         class="nav-link">Music</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="side-bar-sticky">
+        <ul class="nav flex-column">
+          <li role="presentation"
+              routerLinkActive="active"
+              class="nav-item">
+            <a routerLink="comics"
+               class="nav-link">Comics</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active"
+              class="nav-item">
+            <a routerLink="games"
+               class="nav-link">Games</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active"
+              class="nav-item">
+            <a routerLink="music"
+               class="nav-link">Music</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>

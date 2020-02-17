@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { HeroSearchComponent } from './modal';
 
 @Component({
   selector: 'app-heroes',
@@ -7,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
   openHeroSearch() {
+    this._modalService.open(HeroSearchComponent, {size: 'lg'});
   }
 }

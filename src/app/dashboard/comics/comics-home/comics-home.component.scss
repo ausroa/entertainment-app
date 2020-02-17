@@ -1,3 +1,22 @@
-.comics-home-container {
-  padding: 40px;
+.home-banner {
+  flex: 1;
+  padding: 5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.home-card {
+  padding: 5px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.flex-view-row {
+  margin-top: 5px;
 }
