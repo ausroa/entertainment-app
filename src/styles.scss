@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 // GRID
+.grid-column-1 {
+  display: grid;
+  grid-auto-columns: 100%;
+}
+
 .grid-column-2 {
   display: grid;
   grid-template-columns: 50% 50%;

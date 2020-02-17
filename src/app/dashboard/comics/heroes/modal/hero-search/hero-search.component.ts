@@ -3,14 +3,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HeroSearchService } from './services';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { Observable, Subject } from 'rxjs';
-import { Hero } from './model/hero';
-import {map, take, takeUntil} from 'rxjs/operators';
-import {PowerStatistics} from './model/power-statistics';
-import {HeroBiography} from './model/hero-biography';
-import {HeroAppearance} from './model/hero-appearance';
-import {HeroOccupation} from './model/hero-occupation';
-import {HeroConnections} from './model/hero-connections';
+import { Subject } from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-hero-search',
@@ -33,9 +27,9 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
 
   searchHero() {
     this.heroSearched.next(true);
-    this.heroSearched.unsubscribe();
 
     this._searchService.searchHeroes(this.heroSearchForm.controls.heroSearchName.value).pipe(
+      takeUntil(this._destroy$)
     ).subscribe(hero => {
       this.searchResult = hero.results;
     });
@@ -44,6 +38,7 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this._destroy$.next(true);
     this._destroy$.unsubscribe();
+    this.heroSearched.unsubscribe();
   }
 
 }

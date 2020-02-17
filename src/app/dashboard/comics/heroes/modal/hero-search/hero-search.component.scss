@@ -2,13 +2,17 @@
   margin-top: 15px;
 
   .hero-card {
+    margin-top: 15px;
+
     img {
       width: 100%;
+      float: left;
     }
 
     .hero-text {
-      font-size: 20px;
       margin-top: 5px;
+      margin-left: 15px;
     }
   }
 }
+
