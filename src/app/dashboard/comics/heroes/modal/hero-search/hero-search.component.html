@@ -7,15 +7,31 @@
     <button class="btn btn-primary">Search</button>
   </form>
   <div class="hero-details">
-    <div class="flex-view-column">
-      <div class="hero-card" *ngFor="let hero of searchResult">
+    <div class="flex-view-column" *ngIf="searchResult$ | async as returnedHeroes">
+      <div class="hero-card" *ngFor="let hero of returnedHeroes">
         <div class="grid-column-2">
           <img src="{{hero.image.url}}" alt="heroes">
           <div class="hero-text grid-column-2">
             <div class="flex-view-column">
               <span>Name: {{hero.name}}</span>
-              <span>Powers: {{hero.powerstats.strength}}</span>
-              <span>Statistics: {{hero.biography['full-name']}}</span>
+              <span>Intelligence: {{hero.powerStats.intelligence}}</span>
+              <span>Strength: {{hero.powerStats.strength}}</span>
+              <span>Speed: {{hero.powerStats.speed}}</span>
+              <span>Durability: {{hero.powerStats.durability}}</span>
+              <span>Power: {{hero.powerStats.power}}</span>
+              <span>Combat: {{hero.powerStats.combat}}</span>
+            </div>
+            <hr>
+            <div class="flex-view-column">
+              <h4>Biography</h4>
+<!--              TODO fix missing fields-->
+              <span>Full Name: {{hero.biography.fullName}}</span>
+              <span>Alter Egos: {{hero.biography.alterEgos}}</span>
+              <span>Aliases: {{hero.biography.aliases}}</span>
+              <span>Place Of Birth: {{hero.biography.placeOfBirth}}</span>
+              <span>First Appearance: {{hero.biography.firstAppearance}}</span>
+              <span>Publisher: {{hero.biography.publisher}}</span>
+              <span>Alignment: {{hero.biography.alignment}}</span>
             </div>
           </div>
         </div>

@@ -3,8 +3,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HeroSearchService } from './services';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { Subject } from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import {Observable, Subject} from 'rxjs';
+import {map, takeUntil} from 'rxjs/operators';
+import { Hero } from "./model/hero";
+import {PowerStatistics} from "./model/power-statistics";
+import {HeroBiography} from "./model/hero-biography";
+import {HeroAppearance} from "./model/hero-appearance";
+import {HeroOccupation} from "./model/hero-occupation";
+import {HeroConnections} from "./model/hero-connections";
 
 @Component({
   selector: 'app-hero-search',
@@ -18,7 +24,7 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
     heroSearchName: new FormControl()
   });
   heroSearched: Subject<boolean> = new Subject<boolean>();
-  searchResult: any;
+  searchResult$: Observable<Hero[]>;
 
   constructor(public activeModal: NgbActiveModal, private _searchService: HeroSearchService) { }
 
@@ -28,11 +34,65 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
   searchHero() {
     this.heroSearched.next(true);
 
-    this._searchService.searchHeroes(this.heroSearchForm.controls.heroSearchName.value).pipe(
-      takeUntil(this._destroy$)
-    ).subscribe(hero => {
-      this.searchResult = hero.results;
-    });
+    this.searchResult$ = this._searchService.searchHeroes(this.heroSearchForm.controls.heroSearchName.value).pipe(
+      takeUntil(this._destroy$),
+      map(data => {
+        const heroArray: Hero[] = [];
+
+        data.results.forEach(h => {
+          const powerStats: PowerStatistics = {
+            intelligence: h.powerstats.intelligence,
+            strength: h.powerstats.strength,
+            speed: h.powerstats.speed,
+            durability: h.powerstats.durability,
+            power: h.powerstats.power,
+            combat: h.powerstats.combat
+          };
+
+          const heroBio: HeroBiography = {
+            fullName: h.biography.fullName,
+            alterEgos: h.biography.alterEgos,
+            aliases: h.biography.aliases,
+            placeOfBirth: h.biography.placeOfBirth,
+            firstAppearance: h.biography.firstAppearance,
+            publisher: h.biography.publisher,
+            alignment: h.biography.alignment
+          };
+
+          const heroAppearance: HeroAppearance = {
+            gender: h.appearance.gender,
+            race: h.appearance.race,
+            height: h.appearance.height,
+            weight: h.appearance.weight,
+            eyeColor: h.appearance.eyeColor,
+            hairColor: h.appearance.hairColor
+          };
+
+          const heroOccupation: HeroOccupation = {
+            occupation: h.work.occupation,
+            base: h.work.base
+          };
+
+          const heroConnections: HeroConnections = {
+            groupAffiliation: h.connections.groupAffiliation,
+            relatives: h.connections.relatives
+          };
+
+          const hero: Hero = {
+            id: h.id,
+            name: h.name,
+            powerStats: powerStats,
+            biography: heroBio,
+            appearance: heroAppearance,
+            work: heroOccupation,
+            connections: heroConnections,
+            image: h.image,
+          };
+          heroArray.push(hero);
+        });
+        return heroArray;
+      })
+    );
   }
 
   ngOnDestroy() {

@@ -4,7 +4,7 @@ import { HeroAppearance } from './hero-appearance';
 import { HeroOccupation } from './hero-occupation';
 import { HeroConnections } from './hero-connections';
 
-export class Hero {
+export interface Hero {
   id: number;
   name: string;
   powerStats: PowerStatistics;
