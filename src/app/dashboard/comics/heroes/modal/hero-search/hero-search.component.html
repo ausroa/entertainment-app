@@ -13,6 +13,7 @@
           <img src="{{hero.image.url}}" alt="heroes">
           <div class="hero-text grid-column-2">
             <div class="flex-view-column">
+              <h3>Stats</h3>
               <span>Name: {{hero.name}}</span>
               <span>Intelligence: {{hero.powerStats.intelligence}}</span>
               <span>Strength: {{hero.powerStats.strength}}</span>
@@ -22,9 +23,8 @@
               <span>Combat: {{hero.powerStats.combat}}</span>
             </div>
             <hr>
-            <div class="flex-view-column">
-              <h4>Biography</h4>
-<!--              TODO fix missing fields-->
+            <div class="flex-view-column" style="grid-column: 1 / span 2">
+              <h3>Biography</h3>
               <span>Full Name: {{hero.biography.fullName}}</span>
               <span>Alter Egos: {{hero.biography.alterEgos}}</span>
               <span>Aliases: {{hero.biography.aliases}}</span>

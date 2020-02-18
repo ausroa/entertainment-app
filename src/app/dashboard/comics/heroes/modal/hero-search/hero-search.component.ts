@@ -50,8 +50,8 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
           };
 
           const heroBio: HeroBiography = {
-            fullName: h.biography.fullName,
-            alterEgos: h.biography.alterEgos,
+            fullName: h.biography['full-name'],
+            alterEgos: h.biography['alter-egos'],
             aliases: h.biography.aliases,
             placeOfBirth: h.biography.placeOfBirth,
             firstAppearance: h.biography.firstAppearance,
